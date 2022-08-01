@@ -32,7 +32,7 @@ public class JpaTest {
             tx.begin();
 
             Customer customer = new Customer();
-            customer.setCustName("张三");
+            customer.setCustName("牛逼");
             entityManager.persist(customer);
 
             tx.commit();
