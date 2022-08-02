@@ -18,6 +18,7 @@ import java.util.Optional;
  * @date 2022-07-31
  */
 
+
 //@ContextConfiguration("/spring.xml")    xml方式配置
 @ContextConfiguration(classes = SpringDataJPAConfig.class)
 @RunWith(SpringJUnit4ClassRunner.class)
