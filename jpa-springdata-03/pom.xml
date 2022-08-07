@@ -71,6 +71,14 @@
             <scope>test</scope>
         </dependency>
 
+<!--        审计功能依赖这个-->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-aspects</artifactId>
+            <version>5.3.15</version>
+            <scope>test</scope>
+        </dependency>
+
         <!--        querydsl-->
         <dependency>
             <groupId>com.querydsl</groupId>

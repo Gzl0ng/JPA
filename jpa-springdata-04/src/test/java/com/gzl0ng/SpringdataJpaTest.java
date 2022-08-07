@@ -1,4 +1,4 @@
-package com.gzl0ng.test;
+package com.gzl0ng;
 
 import com.gzl0ng.config.SpringDataJPAConfig;
 import com.gzl0ng.pojo.Customer;
@@ -9,37 +9,22 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Optional;
 
 /**
  * @author 郭正龙
- * @date 2022-07-31
+ * @date 2022-08-07
  */
-
-
-//@ContextConfiguration("/spring.xml")    xml方式配置
 @ContextConfiguration(classes = SpringDataJPAConfig.class)
 @RunWith(SpringJUnit4ClassRunner.class)
-public class SpringDataJpaTest {
-
+public class SpringdataJpaTest {
     @Autowired
     CustomerRepository repository;
 
     @Test
-    public void test(){
-        Optional<Customer> byId = repository.findById(20L);
+    public void testR(){
+        Optional<Customer> byId = repository.findById(3L);
 
         System.out.println(byId.get());
-        System.out.println(byId.orElse(null));
-    }
-
-    @Test
-    public void testAll(){
-
-        Iterable<Customer> allById = repository.findAllById(Arrays.asList(2L, 3L, 4L, 6L, 7L));
-
-        System.out.println(allById);
     }
 }

@@ -4,7 +4,15 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.gzl0ng</groupId>
     <artifactId>sssp_new</artifactId>
+    <packaging>pom</packaging>
     <version>0.0.1-SNAPSHOT</version>
+    <modules>
+        <module>jpa-hibernate-01</module>
+        <module>jpa-springdata-02</module>
+        <module>jpa-springdata-03</module>
+        <module>jpa-springdata-04</module>
+
+    </modules>
     <name>sssp_new</name>
     <description>Demo project for Spring Boot</description>
 

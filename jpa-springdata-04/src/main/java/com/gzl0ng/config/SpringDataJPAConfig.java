@@ -2,6 +2,7 @@ package com.gzl0ng.config;
 
 import com.alibaba.druid.pool.DruidDataSource;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.domain.AuditorAware;
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
@@ -21,9 +22,10 @@ import java.util.Optional;
  * @date 2022-08-01
  */
 @Configuration    //标记当前类为配置类  =xml配置文件
-@EnableJpaRepositories(basePackages = "com.gzl0ng.repositories")   //启动jpa  相当于<jpa:repositories
+//@EnableJpaRepositories(basePackages = "com.gzl0ng.repositories")   //启动jpa  相当于<jpa:repositories
 @EnableTransactionManagement    //开启事务
-@EnableJpaAuditing  //开启审计功能
+//@EnableJpaAuditing  //开启审计功能
+@ComponentScan("com.gzl0ng")
 public class SpringDataJPAConfig {
 
     /**
@@ -100,16 +102,16 @@ public class SpringDataJPAConfig {
     /**
      * AuditorAware返回当前用户,泛型跟customer类中创建者字段类型一样
      */
-    @Bean
-    public AuditorAware<String> auditorAware(){
-        //这里不去写这个类，因为是函数式接口直接写了
-        return new AuditorAware() {
-            @Override
-            public Optional getCurrentAuditor() {
-                //当前用户 session:session拿当前用户  redis或者spring secure
-                return Optional.of("牛逼");
-            }
-        };
-    }
+//    @Bean
+//    public AuditorAware<String> auditorAware(){
+//        //这里不去写这个类，因为是函数式接口直接写了
+//        return new AuditorAware() {
+//            @Override
+//            public Optional getCurrentAuditor() {
+//                //当前用户 session:session拿当前用户  redis或者spring secure
+//                return Optional.of("牛逼");
+//            }
+//        };
+//    }
 
 }
